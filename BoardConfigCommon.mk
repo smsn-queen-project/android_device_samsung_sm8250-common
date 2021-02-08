@@ -99,5 +99,8 @@ BOARD_AVB_RECOVERY_ALGORITHM               := SHA256_RSA4096
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX          := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
+# Sepolicy
+include device/qcom/sepolicy_vndr/SEPolicy.mk
+
 # Inherit the proprietary files
 include vendor/samsung/sm8250-common/BoardConfigVendor.mk
