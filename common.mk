@@ -394,6 +394,10 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.samsung
 
+# VNDK
+PRODUCT_PACKAGES += \
+    libcrypto-v33
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
