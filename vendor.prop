@@ -152,6 +152,9 @@ ro.frp.pst=/dev/block/persistent
 # Gatekeeper
 ro.hardware.gatekeeper=mdfpp
 
+# Incremental FS
+ro.incremental.enable=true
+
 # Keystore
 ro.hardware.keystore=mdfpp
 ro.hardware.keystore_desede=true
