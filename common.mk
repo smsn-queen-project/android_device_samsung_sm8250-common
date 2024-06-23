@@ -9,6 +9,9 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
 
+# Inherit common RFS Symlinks for Samsung Qualcomm
+$(call inherit-product, $(LOCAL_PATH)/rfs_symlinks.mk)
+
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
