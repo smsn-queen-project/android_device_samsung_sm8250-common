@@ -447,7 +447,8 @@ PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.control@1.0.vendor \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
-    wifi_qcom.rc
+    wifi_qcom.rc \
+    firmware_WCNSS_qcom_cfg.ini_symlink
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/qcacld/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
