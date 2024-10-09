@@ -68,13 +68,13 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib/libsample5.so)
+        vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "libsample6.so" "libsample7.so" "${2}"
+            sed -i 's/mdfpp/default/g' "${2}"
             ;;
-        vendor/lib/libsample7.so)
+        vendor/lib64/hw/gatekeeper.mdfpp.so|vendor/lib64/libskeymaster4device.so)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --set-soname "libsample7.so" "${2}"
+            "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
         *)
             return 1
