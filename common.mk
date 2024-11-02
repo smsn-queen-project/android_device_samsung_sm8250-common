@@ -184,6 +184,13 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor \
     libchrome.vendor
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
+    android.hardware.sensors-service.samsung-multihal \
+    android.hardware.sensors@2.0-ScopedWakelock.vendor \
+    libsensorndkbridge
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
