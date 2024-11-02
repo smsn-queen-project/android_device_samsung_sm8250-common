@@ -63,6 +63,9 @@ TARGET_USES_QCOM_DISPLAY_BSP            := true
 TARGET_USES_QTI_MAPPER_2_0              := true
 TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1   := true
 
+# Include
+$(call soong_config_set,samsungVars,target_specific_header_path,$(COMMON_PATH)/include)
+
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE         := 0x00000000

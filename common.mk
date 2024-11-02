@@ -136,6 +136,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor \
     libkeymaster4_1support.vendor
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.samsung
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
