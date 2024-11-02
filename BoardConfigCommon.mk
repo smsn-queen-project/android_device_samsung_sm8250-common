@@ -44,6 +44,13 @@ BOARD_USES_ALSA_AUDIO                          := true
 TARGET_BOOTLOADER_BOARD_NAME := kona
 TARGET_NO_BOOTLOADER         := true
 
+# Camera
+SOONG_CONFIG_NAMESPACES += samsungCameraVars
+SOONG_CONFIG_samsungCameraVars += \
+    needs_sec_reserved_field
+
+SOONG_CONFIG_samsungCameraVars_needs_sec_reserved_field := true
+
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE         := 0x00000000
