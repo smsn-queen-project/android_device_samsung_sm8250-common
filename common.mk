@@ -138,6 +138,34 @@ PRODUCT_PACKAGES += \
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# QMI
+PRODUCT_PACKAGES += \
+    libcurl.vendor \
+    libjson \
+    libjsoncpp.vendor \
+    libnetutils.vendor \
+    libqti_vndfwk_detect \
+    libqti_vndfwk_detect.vendor \
+    libsqlite.vendor \
+    libvndfwk_detect_jni.qti \
+    libvndfwk_detect_jni.qti.vendor
+
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.0-impl \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    libxml2 \
+    librilutils \
+    librmnetctl \
+    secril_config_svc
+
+# SecureElement
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0.vendor \
+    libchrome.vendor
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
