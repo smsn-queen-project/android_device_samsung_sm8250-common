@@ -28,7 +28,7 @@
 # Firmware directory Path
 # Below macro will be read by uevent and path will
 # be added to search path for firmware loading
-firmware_directories /vendor/firmware_mnt/image/
+firmware_directories /vendor/firmware_mnt/image/ /vendor/firmware-modem/image/
 
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     oem_2901
@@ -62,8 +62,17 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/hgsl                 0666   system     system
 /dev/iio:device*          0664   system     system
 
+# dev ril bridge
+/dev/drb                  0660   system     radio
+
 #permissions for UFS RPMB BSG device node
 /dev/0:0:0:49476          0600   system     system
+
+# permissions for USB
+/dev/usb_mtp_gadget       0660   system     mtp
+/dev/android_ssusbcon     0660   system     system
+/sys/class/android_usb/android0  f_rndis/ethaddr      0660  system   system
+/sys/class/android_usb/android0  terminal_version     0660  system   system
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -80,6 +89,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/radio0               0640   system     system
 /dev/rfcomm0              0660   bluetooth  bluetooth
 /dev/ttyUSB0              0660   bluetooth  bluetooth
+/dev/ttyHS8               0660   root       radio
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
 /dev/smdcntl2             0640   radio      radio
@@ -328,8 +338,14 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/uio1                 0660   system     system
 /dev/uio2                 0660   system     system
 
+# spi ir nodes
+/dev/ir_spi               0660   system     system
+
 # SSR devices
-/dev/subsys_*         0640   system     system
+/dev/subsys_*             0640   system     system
+
+# Modem silentreset device
+/dev/esoc-0               0660   root       radio
 
 # Ultrasound device
 /dev/usf1                 0660   system     system
@@ -358,7 +374,16 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/block/platform/soc/4804000.ufshc/by-name/frp       0600   system     system
 
 # This is temporary while using SD card for initial bring-up
-/dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc/8804000.sdhci/by-name/frp         0600   system  system
+
+# Reactivation Lock
+/dev/block/platform/soc/1d84000.ufshc/by-name/steady      0660   system  system
+
+# Google FRP solution
+/dev/block/platform/soc/1d84000.ufshc/by-name/persistent  0660   system  system
+
+# Param permission
+/dev/block/platform/soc/1d84000.ufshc/by-name/param       0660   root    system
 
 # Kmsg device
 /dev/kmsg                                               0620   root       system
@@ -488,3 +513,73 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_raw                     0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale                   0664    system  system
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   in_temp_scale_available         0664    system  system
+
+# flicker sensor
+/sys/class/sensors/als_rear    name                    0444    system    radio
+/sys/class/sensors/als_rear    vendor                  0444    system    radio
+/sys/class/sensors/als_rear    part_type               0444    system    radio
+/sys/class/sensors/als_rear    device_id               0444    system    radio
+/sys/class/sensors/als_rear    als_flush               0220    system    radio
+/sys/class/sensors/als_rear    write_reg               0220    system    system
+/sys/class/sensors/als_rear    read_reg                0664    system    system
+/sys/class/sensors/als_rear    eol_mode                0664    system    system
+/sys/class/sensors/als_rear    eol_spec                0444    system    system
+/sys/class/sensors/als_rear    als_factory_cmd         0444    system    system
+/sys/class/sensors/als_rear    als_red                 0444    system    system
+/sys/class/sensors/als_rear    als_green               0444    system    system
+/sys/class/sensors/als_rear    als_blue                0444    system    system
+/sys/class/sensors/als_rear    als_ir                  0444    system    system
+/sys/class/sensors/als_rear    als_clear               0444    system    system
+/sys/class/sensors/als_rear    als_wideband            0444    system    system
+/sys/class/sensors/als_rear    als_version             0444    system    system
+/sys/class/sensors/als_rear    als_raw_data            0444    system    system
+/sys/class/sensors/als_rear    als_debug               0664    system    system
+/sys/class/sensors/als_rear    flicker_data            0444    system    system
+/sys/class/sensors/als_rear    i2c_err_cnt             0664    system    system
+/sys/class/sensors/als_rear    int_pin_check           0444    system    system
+/sys/class/sensors/als_rear    mode_cnt                0664    system    system
+/sys/class/sensors/als_rear    curr_adc                0664    system    system
+/sys/class/sensors/als_rear    sensor_info             0444    system    system
+/dev/als_rear                                          0600    system    system
+
+#
+# Permissions for Vibrator [
+#
+
+# Vibrator nodes permission (timed_output)
+/sys/class/timed_output/vibrator    enable                           0664   system system
+/sys/class/timed_output/vibrator    motor_type                       0664   system system
+/sys/class/timed_output/vibrator    intensity                        0664   system system
+/sys/class/timed_output/vibrator    haptic_engine                    0664   system system
+/sys/class/timed_output/vibrator    multi_freq                       0664   system system
+/sys/class/timed_output/vibrator    num_waves                        0664   system system
+/sys/class/timed_output/vibrator    cp_trigger_index                 0664   system system
+/sys/class/timed_output/vibrator    cp_trigger_queue                 0664   system system
+/sys/class/timed_output/vibrator    pwle                             0664   system system
+/sys/class/timed_output/vibrator    virtual_composite_indexes        0664   system system
+/sys/class/timed_output/vibrator    virtual_pwle_indexes             0664   system system
+/sys/class/timed_output/vibrator    event_cmd                        0664   system system
+/sys/class/timed_output/vibrator    intensities                      0664   system system
+/sys/class/timed_output/vibrator    haptic_intensities               0664   system system
+/sys/class/timed_output/vibrator    haptic_durations                 0664   system system
+/sys/class/timed_output/vibrator    use_sep_index                    0664   system system
+
+# Vibrator nodes permission - inputff 
+/sys/class/sec_vib_inputff/control	i2s_test                      0664   system system
+/sys/class/sec_vib_inputff/control	firmware_load                 0664   system system
+/sys/class/sec_vib_inputff/control	current_temp                  0664   system system
+/sys/class/sec_vib_inputff/control	ach_percent                   0664   system system
+/sys/class/sec_vib_inputff/control	trigger_calibration           0664   system system
+/sys/class/sec_vib_inputff/control	f0_measured                   0664   system system
+/sys/class/sec_vib_inputff/control	f0_offset                     0664   system system
+/sys/class/sec_vib_inputff/control	f0_stored                     0664   system system
+/sys/class/sec_vib_inputff/control	use_sep_index                 0664   system system
+
+# Vibrator nodes permission (vib_info)
+/sys/class/vib_info_class/vib_support_info	intensities           0664   system system
+/sys/class/vib_info_class/vib_support_info	haptic_intensities    0664   system system
+/sys/class/vib_info_class/vib_support_info	functions             0664   system system
+
+#
+# ] Permissions for Vibrator
+#
