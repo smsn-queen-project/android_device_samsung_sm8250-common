@@ -127,6 +127,11 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_VENDOR             := samsung
 TARGET_BOARD_PLATFORM    := kona
 
+# Prop files
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
+
 # Recovery
 BOARD_HAS_DOWNLOAD_MODE      := true
 BOARD_INCLUDE_RECOVERY_DTBO  := true
