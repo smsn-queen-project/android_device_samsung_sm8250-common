@@ -66,6 +66,15 @@ TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1   := true
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
+BOARD_ROOT_EXTRA_FOLDERS += \
+    carrier \
+    dqmdbg \
+    efs \
+    omr \
+    optics \
+    prism \
+    spu
+
 # FOD
 TARGET_SURFACEFLINGER_UDFPS_LIB := //$(COMMON_PATH):libudfps_extension.samsung-sm8250
 TARGET_USES_FOD_ZPOS := true
