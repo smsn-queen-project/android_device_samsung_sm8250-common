@@ -21,6 +21,10 @@ TARGET_2ND_CPU_ABI2            := armeabi
 TARGET_2ND_CPU_VARIANT         := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a76
 
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := kona
+TARGET_NO_BOOTLOADER         := true
+
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE         := 0x00000000
@@ -46,6 +50,11 @@ BOARD_KERNEL_SEPARATED_DTBO  := true
 TARGET_KERNEL_SOURCE         := kernel/samsung/sm8250
 TARGET_KERNEL_CONFIG         := vendor/kona-sec-perf_defconfig \
                                 vendor/debugfs.config
+
+# Platform
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_VENDOR             := samsung
+TARGET_BOARD_PLATFORM    := kona
 
 # Inherit the proprietary files
 include vendor/samsung/sm8250-common/BoardConfigVendor.mk
