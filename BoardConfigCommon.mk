@@ -51,6 +51,18 @@ SOONG_CONFIG_samsungCameraVars += \
 
 SOONG_CONFIG_samsungCameraVars_needs_sec_reserved_field := true
 
+# Display
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
+TARGET_USES_DISPLAY_RENDER_INTENTS      := true
+TARGET_USES_DRM_PP                      := true
+TARGET_USES_GRALLOC1                    := true
+TARGET_USES_GRALLOC4                    := true
+TARGET_USES_HWC2                        := true
+TARGET_USES_ION                         := true
+TARGET_USES_QCOM_DISPLAY_BSP            := true
+TARGET_USES_QTI_MAPPER_2_0              := true
+TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1   := true
+
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE         := 0x00000000
