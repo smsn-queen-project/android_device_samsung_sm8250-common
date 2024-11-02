@@ -329,6 +329,10 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@2.0.vendor \
     android.frameworks.cameraservice.service@2.1.vendor
 
+# Touch features
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.samsung
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.3-service-qti
