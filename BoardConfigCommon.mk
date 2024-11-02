@@ -63,6 +63,9 @@ TARGET_USES_QCOM_DISPLAY_BSP            := true
 TARGET_USES_QTI_MAPPER_2_0              := true
 TARGET_USES_QTI_MAPPER_EXTENSIONS_1_1   := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
+
 # Include
 $(call soong_config_set,samsungVars,target_specific_header_path,$(COMMON_PATH)/include)
 
