@@ -140,7 +140,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/samsung
 
 # Inherit proprietary blobs
 $(call inherit-product, vendor/samsung/sm8250-common/sm8250-common-vendor.mk)
