@@ -166,6 +166,9 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor \
     libchrome.vendor
 
+# Shipping API level
+PRODUCT_SHIPPING_API_LEVEL := 29
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
