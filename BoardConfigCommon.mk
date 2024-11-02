@@ -89,6 +89,9 @@ TARGET_KERNEL_SOURCE         := kernel/samsung/sm8250
 TARGET_KERNEL_CONFIG         := vendor/kona-sec-perf_defconfig \
                                 vendor/debugfs.config
 
+# Keymaster
+TARGET_KEYMASTER_VARIANT := samsung
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE             := 262144
 

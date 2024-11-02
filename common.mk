@@ -99,6 +99,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.fastcharge@1.0-service.samsung
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    android.hardware.gatekeeper@1.0.vendor
+
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.0-service.samsung \
+    android.hardware.keymaster@4.1.vendor \
+    libkeymaster4_1support.vendor
+
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
