@@ -1,0 +1,5 @@
+# Allow bluetooth HAL to search sec_efs_file
+allow hal_bluetooth_default sec_efs_file:dir r_dir_perms;
+
+# Allow bluetooth HAL to write bluetooth properties
+set_prop(hal_bluetooth_default, vendor_bluetooth_prop)
