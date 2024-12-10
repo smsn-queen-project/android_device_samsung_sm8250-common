@@ -1,0 +1,18 @@
+
+//
+// Copyright (C) 2021-2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_static {
+    name: "libinit_samsung_kona",
+    recovery_available: true,
+    srcs: [
+        "libinit_variant.cpp",
+        "libinit_utils.cpp"
+    ],
+    whole_static_libs: ["libbase"],
+    include_dirs: ["system/core/init"],
+    export_include_dirs: ["include"],
+}
