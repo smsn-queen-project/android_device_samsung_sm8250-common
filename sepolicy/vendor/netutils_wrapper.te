@@ -2,6 +2,8 @@ allow netutils_wrapper sec_efs_file:file rw_file_perms;
 
 allow netutils_wrapper drb_device:chr_file rw_file_perms;
 
+allow netutils_wrapper tun_device:chr_file rw_file_perms;
+
 allow netutils_wrapper rild:fd use;
 allow netutils_wrapper rild:fifo_file { read write };
 allow netutils_wrapper rild:netlink_route_socket { read write };
