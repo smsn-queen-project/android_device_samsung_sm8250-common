@@ -884,6 +884,7 @@ vendor/bin/thermal-engine
 vendor/etc/init/init_thermal-engine.rc
 vendor/etc/init/vendor.samsung.hardware.thermal@1.0-service.rc
 vendor/etc/thermal-engine.conf
+vendor/etc/btcon.json
 vendor/etc/vintf/manifest/vendor.samsung.hardware.thermal@1.0-manifest.xml
 vendor/lib/libthermalclient.so
 vendor/lib/vendor.samsung.hardware.thermal@1.0.so
