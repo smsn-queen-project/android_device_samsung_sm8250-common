@@ -193,45 +193,18 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.radio</name>
-        <version>2.2</version>
-        <interface>
-            <name>ISehRadio</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.radio.bridge</name>
-        <version>2.0</version>
-        <interface>
-            <name>ISehBridge</name>
-            <instance>slot1</instance>
-            <instance>slot2</instance>
-        </interface>
-    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.radio.bridge</name>
+        <version>1</version>
         <interface>
             <name>ISehRadioBridge</name>
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.hardware.radio.channel</name>
-        <version>2.0</version>
-        <interface>
-            <name>ISehChannel</name>
-            <instance>epdgd</instance>
-            <instance>epdgd2</instance>
-            <instance>imsd</instance>
-            <instance>imsd2</instance>
-        </interface>
-    </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.radio.channel</name>
+        <version>1</version>
         <interface>
             <name>ISehRadioChannel</name>
             <instance>epdgd</instance>
@@ -242,6 +215,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.radio.data</name>
+        <version>1</version>
         <interface>
             <name>ISehRadioData</name>
             <instance>slot1</instance>
@@ -250,6 +224,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.radio.messaging</name>
+        <version>1</version>
         <interface>
             <name>ISehRadioMessaging</name>
             <instance>slot1</instance>
@@ -258,6 +233,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.radio.network</name>
+        <version>1</version>
         <interface>
             <name>ISehRadioNetwork</name>
             <instance>slot1</instance>
@@ -266,6 +242,7 @@
     </hal>
     <hal format="aidl" optional="true">
         <name>vendor.samsung.hardware.radio.sim</name>
+        <version>1</version>
         <interface>
             <name>ISehRadioSim</name>
             <instance>slot1</instance>
