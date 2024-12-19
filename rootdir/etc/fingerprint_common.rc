@@ -12,6 +12,10 @@ on early-init
     chown system system /dev/qbt2000_ipc
     chown system system /dev/qbtspi
 
+on early-boot
+    chown system system /sys/class/sec/tsp/input/fod_pressed
+    chown system system /sys/class/sec/tsp/input/fod_press_enabled
+
 on boot
 # Fingerprint sensor
     chown system radio /sys/class/fingerprint/fingerprint/type_check
